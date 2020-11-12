@@ -1,8 +1,0 @@
-# Note that the Dockerfile is actually in the publish folder, 
-# but that doesn't get pushed to source control so I'm copying it here.
-
-FROM mcr.microsoft.com/dotnet/aspnet:5.0
-WORKDIR /app
-COPY . .
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet dotnet-docker-clare.dll
-

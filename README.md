@@ -10,6 +10,7 @@ Changes I need to make from that [article](https://medium.com/@vnqmai.hcmue/depl
 
 - Check the [dotnet docker hub](https://hub.docker.com/_/microsoft-dotnet) for the latest Docker image (check out my Dockerfile - in dotnet-docker-clare\bin\Release\net5.0\publish\Dockerfile - for the result)
 - Change the folder in the `docker build` command (for me it was bin\Release\net5.0\publish, for you it will depend on your .Net version - also I had to give it a fully qualified path, not a relative path)
+    - Note: It bothers me that the Dockerfile is buried down in a publish folder, which apart from anything else means it doesn't automatically get pushed to source control - but I haven't managed to get it working yet with a `Dockerfile` in the root folder.
 - I used the command `heroku container:push web --app dotnet-docker-clare` instead of the suggested `docker tag` and `docker push` commands
     - I was confused at first by the error "No images to push", but then I realised I needed to be in the same folder as the `Dockerfile` before I could run `heroku container` commands.
 - Note that the Dockerfile is actually in the publish folder, but that doesn't get pushed to source control so I've copied a version to the root.
